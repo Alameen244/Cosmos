@@ -275,7 +275,7 @@ section.list-page .list-div .list-info .list-images img {
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .list-info .list-images img {
-  transform: translateY(120%);
+  transform: translateY(125%);
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
