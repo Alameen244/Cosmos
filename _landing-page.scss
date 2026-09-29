@@ -1,0 +1,153 @@
+@use "base";
+section.landing-page {
+  width: 100%;
+  height: 120vh;
+  overflow: hidden;
+}
+
+.top-section {
+  height: 50%;
+  width: 100%;
+  .nav {
+    height: 35%;
+    width: 100%;
+    display: flex;
+    padding: 1.2rem 2rem;
+    .nav-left {
+      height: 100%;
+      width: 60%;
+      @include base.flex-col(0.5rem);
+    }
+    .nav-right {
+      height: 100%;
+      width: 40%;
+      @include base.flex-col(1.6rem);
+      justify-content: center;
+      align-items: end;
+    }
+  }
+  .heading {
+    height: 65%;
+    width: 100%;
+    display: flex;
+    align-items: end;
+    h1 {
+      font-size: 12rem;
+      line-height: 1.12;
+      font-weight: 500;
+      color: whitesmoke;
+      animation: landing-text-animation 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+      transition: all 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+      &:hover {
+        transform: skewy(5deg);
+      }
+    }
+  }
+}
+
+.nav-left .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  cursor: pointer;
+  width: fit-content;
+  animation: landing-navlink-animation 2s cubic-bezier(0.39, 0.575, 0.565, 1);
+  h3 {
+    line-height: 0.9;
+    font-size: 14px;
+    transition: all 0.4s ease-out;
+  }
+  .line-div {
+    width: 9px;
+    height: 2px;
+    background-color: whitesmoke;
+    transition: all 0.4s ease-out;
+  }
+  &:hover .line-div {
+    transform-origin: left;
+    transform: scaleX(3);
+  }
+  &:hover h3 {
+    transform: translateX(20px);
+  }
+}
+
+.nav-right p {
+  font-size: 16px;
+  line-height: 1px;
+  position: relative;
+  width: fit-content;
+  animation: landing-navlink-animation2 2s cubic-bezier(0.39, 0.575, 0.565, 1);
+  &::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0%;
+    background-color: whitesmoke;
+    transition: all 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    bottom: -12px;
+    left: 1.1px;
+  }
+  &:hover::after {
+    width: 100%;
+  }
+}
+.bottom-section {
+  height: 50%;
+  width: 100%;
+  overflow: hidden;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 40% 75%;
+    filter: grayscale(5);
+    transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+    animation: landing-image-animation 2s cubic-bezier(0.39, 0.575, 0.565, 1);
+    &:hover {
+      filter: grayscale(0);
+      scale: 1.2;
+      transform-origin: top right;
+    }
+  }
+}
+
+@keyframes landing-image-animation {
+  from {
+    transform: scale(1.4);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes landing-text-animation {
+  from {
+    transform: translateY(120%);
+    opacity: 0.2;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes landing-navlink-animation {
+  from {
+    transform: translateX(-120%);
+    opacity: 0.2;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes landing-navlink-animation2 {
+  from {
+    transform: translateX(120%);
+    opacity: 0.2;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}

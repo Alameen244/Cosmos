@@ -1,0 +1,105 @@
+@use "base";
+section.list-page {
+  height: 100vh;
+  width: 100%;
+  padding: 1.2rem 2rem;
+  .list-div {
+    display: flex;
+    width: 100%;
+    height: 23%;
+    overflow: hidden;
+    padding: 0.8rem 0;
+    .list-number {
+      height: 100%;
+      width: 55%;
+      display: flex;
+      align-items: center;
+      padding: 1.2rem 2rem;
+    }
+    .list-info {
+      height: 100%;
+      width: 45%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .list-description {
+        height: 100%;
+        width: 55%;
+        @include base.flex-col(0rem);
+        justify-content: space-between;
+        padding: 0.4rem 0;
+      }
+      .list-images {
+        display: flex;
+        height: 100%;
+        width: 45%;
+        gap: 20px;
+        align-items: center;
+        img {
+          height: 85%;
+          width: 45%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+.list-div {
+    border-top: solid 2px whitesmoke;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.list-number {
+  h2 {
+    font-size: 10rem;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+}
+
+.list-info {
+  .list-description {
+    h4 {
+      font-size: 2.5rem;
+      text-decoration: underline;
+      font-weight: 200;
+      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    p {
+      font-size: 0.75rem;
+      line-height: 1.1;
+      text-wrap: balance;
+      opacity: 0.7;
+      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+  }
+  .list-images {
+    img {
+      transform: translateY(120%);
+      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+  }
+}
+
+.list-div:hover {
+  background-color: whitesmoke;
+  .list-number h2,
+  .list-description h4,
+  p {
+    color: base.$primary-color;
+  }
+  .list-description {
+    h4 {
+      font-weight: 600;
+    }
+    p {
+      opacity: 1;
+    }
+  }
+  .list-images img {
+    transform: translateY(0%);
+  }
+}
+
+.list-page{
+    padding: 2rem 0;
+    @include base.flex-col(0rem)
+}

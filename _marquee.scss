@@ -1,0 +1,49 @@
+section.marquee{
+    height: 40vh;
+    width: 100%;
+    padding: 1rem 0;
+}
+.marque-wrapper{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    overflow: hidden;
+
+}
+
+.marque-tracker{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-shrink: 0;
+    gap: 20px;
+    mix-blend-mode: screen;
+    animation: move 12s linear infinite alternate;
+
+}
+
+.marque-tracker img{
+    height: 70%;
+    width: 23%;
+    object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.marque-tracker>img:nth-child(3){
+    filter: invert(1);
+}
+.marque-tracker>img:hover{
+    scale: 1.14;
+}
+@keyframes move {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-100%);
+
+    }
+}
