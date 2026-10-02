@@ -49,7 +49,7 @@ section.landing-page {
   display: flex;
   align-items: center;
   gap: 0.15rem;
-  cursor: pointer;
+  cursor: url(./pointer.svg),auto;
   width: fit-content;
   animation: landing-navlink-animation 2s cubic-bezier(0.39, 0.575, 0.565, 1);
   h3 {
